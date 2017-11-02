@@ -9,7 +9,7 @@
 		<section id="son1">
 			<div>
 				<el-row>
-					<el-col :span="12" class="text-center">
+					<el-col :span="12">
 						<img src="./img/renewal.png"/>
 					</el-col>
 					<el-col :span="12"  class="marginTop">
@@ -30,22 +30,22 @@
 						<ul class="con-list">
 							<li>只需一个车牌号，报价核保方便快捷</li>
 							<li>支持短信发送报价的方式</li>
-							<li>应用场景：代理人和车主报价</li>
+							<li>应用场景：代理人和车主报价（上图为代理人报价场景）</li>
 						</ul>
 					</el-col>
-					<el-col :span="12" class="text-center">
+					<el-col :span="12" class="text-right">
 						<img src="./img/quote.png"/>
 					</el-col>
 				</el-row>
 			</div>
 		</section>
 		<section id="son3">
-			<div>
+			<div class="paddingBottom">
 				<el-row>
-					<el-col :span="13" class="text-center">
-						<img src="./img/order.png"/>
+					<el-col :span="15" class="text-left" style="">
+						<img style="height: 100%;" src="./img/order.png"/>
 					</el-col>
-					<el-col :span="11"  class="marginTop">
+					<el-col :span="9"  class="marginTop">
 						<h3>订单管理	</h3>
 						<ul class="con-list">
 							<li>当车险到期后，会自动提醒业务员，紧急消息（进店通知）弹窗提醒，不紧急消息（普通到期）列表提醒</li>
@@ -65,7 +65,7 @@
 							<li>定期与代理出单网点结算佣金</li>
 						</ul>
 					</el-col>
-					<el-col :span="12" class="text-center">
+					<el-col :span="12" class="text-right">
 						<img src="./img/amount.png"/>
 					</el-col>
 				</el-row>
@@ -74,10 +74,10 @@
 		<section id="son5">
 			<div class="paddingBottom">
 				<el-row>
-					<el-col :span="12" class="text-center">
+					<el-col :span="15">
 						<img src="./img/CRM.png"/>
 					</el-col>
-					<el-col :span="12"  class="marginTop">
+					<el-col :span="9"  class="marginTop">
 						<h3>车主CRM</h3>
 						<ul class="con-list">
 							<li>数据是核心竞争力</li>
@@ -98,7 +98,7 @@
 							<li>统一标注化接口，一次对接，实现多家保险公司连接</li>
 						</ul>
 					</el-col>
-					<el-col :span="12" class="text-center">
+					<el-col :span="12" class="text-right">
 						<img src="./img/api.png"/>
 					</el-col>
 				</el-row>
@@ -154,8 +154,22 @@
 </script>
 
 <style lang="less" scoped="scoped">
+	/*base.css开始*/
+	body,p,input,textarea,form,h1,h2,h3,h4,h5,h6,ol,dl,ul,li,dd,dt{font-weight:normal;padding:0px;padding-top:0px;padding-bottom:0px;padding-left:0px;padding-right:0px;margin:0px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;list-style:none;}
+	img{border:0;}
+	a{text-decoration:none;}
+	.fl{
+		float: left;
+	}
+	.fr{
+		float: right;
+	}
+	/*base.css结束*/
 	.text-center{
 		text-align: center;
+	}
+	.text-right{
+		text-align: right;
 	}
 	.page {
 		width: 100%;
@@ -183,6 +197,7 @@
 	
 	.active {
 		font-weight: bold;
+		border-bottom: 2px solid #3DAEFE;
 	}
 	
 	.con-list{
@@ -196,7 +211,7 @@
 		line-height: 28px;
 	}
 	section>div{
-		width: 900px;
+		width: 780px;
 		margin: 0 auto;
 		padding-top: 70px;
 	}

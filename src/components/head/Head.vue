@@ -6,10 +6,10 @@
 				<ul class="text-right">
 					<router-link v-for="(item,index) in navTitle" tag="li" :to="item.name" :key="item.name" v-on:click.native='productHead(index)'>{{item.title}}</router-link>
 					<li>
-						<el-button type="primary" size="small" @click="openDetail('http://cars.insbaby.com/login')">&nbsp;&nbsp;登 录&nbsp;&nbsp;</el-button>
+						<el-button class="btn" type="primary" size="small" @click="openDetail('http://cars.insbaby.com/login')">&nbsp;&nbsp;登 录&nbsp;&nbsp;</el-button>
 					</li>
 					<li>
-						<el-button size="small" @click="openDetail('http://cars.insbaby.com/register')">&nbsp;&nbsp;注 册&nbsp;&nbsp;</el-button>
+						<el-button class="btn blue" size="small" @click="openDetail('http://cars.insbaby.com/register')">&nbsp;&nbsp;注 册&nbsp;&nbsp;</el-button>
 					</li>
 				</ul>
 			</nav>
@@ -67,8 +67,17 @@
 </script>
 
 <style lang="less" scoped>
-
-	/*@import "../../static/common.less";*/
+	/*base.css开始*/
+	body,p,input,textarea,form,h1,h2,h3,h4,h5,h6,ol,dl,ul,li,dd,dt{font-weight:normal;padding:0px;padding-top:0px;padding-bottom:0px;padding-left:0px;padding-right:0px;margin:0px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;list-style:none;}
+	img{border:0;}
+	a{text-decoration:none;}
+	.fl{
+		float: left;
+	}
+	.fr{
+		float: right;
+	}
+	/*base.css结束*/
 	#header{
 		position: fixed;
 		top: 0;
@@ -97,7 +106,6 @@
 	}
 	
 	.content-box {
-		width: 960px;
 		height: 72px;
 		line-height: 72px;
 		margin: 0 auto;
@@ -117,10 +125,34 @@
 	
 	.router-link-active {
 		border-bottom: 2px solid @color;
+		font-weight: bold;
 		color: @color;
 	}
-	
-	@media only screen and (max-width: 768px) {
-		width: 100%;
+	.btn{
+		width: 88px;
+	}
+	.btn.blue{
+		color: #20A0FF;
+		border: 1px solid #20a0ff;
+	}
+	@media only screen and (min-width: 1200px){
+		.content-box {
+			width: 1170px;
+		}
+	}
+	@media only screen and (min-width: 992px ) and (max-width: 1200px){
+		.content-box {
+			width: 970px;
+		}
+	}
+	@media only screen and (max-width: 970px) {
+		.content-box {
+			/*width: 970px;*/
+			min-width: 875px;
+			margin: 0 20px;
+		}
+		.btn{
+			width:auto;
+		}
 	}
 </style>

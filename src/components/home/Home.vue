@@ -2,33 +2,33 @@
 	<div id="home" style="margin-top: 72px;">
 		<section  :style="{backgroundImage: 'url(' + bg + ')',height:setHeight+'px'}">
 			<div class="btnBox">
-				<el-button type="primary" @click="openDetail('http://cars.insbaby.com/login')"> 开始使用 </el-button>
-				<router-link tag="el-button" to="/product">了解更多   </router-link>
+				<el-button class="btn1" type="primary" @click="openDetail('http://cars.insbaby.com/login')"> 开始使用 </el-button>
+				<router-link class="btn1" tag="el-button" to="/product">了解更多   </router-link>
 			</div>
 		</section>
 		<section>
-			<div class="mainCon">
+			<div >
 				<header>
 					<el-row>
-						<el-col :span="9" class="text-center">
+						<el-col :span="8" class="text-center">
 							<div class="line"></div>
 						</el-col>
-						<el-col :span="6" class="text-center">
+						<el-col :span="8" class="text-center">
 							<h1>我们为客户解决什么问题？</h1>
 						</el-col>
-						<el-col :span="9" class="text-center">
+						<el-col :span="8" class="text-center">
 							<div class="line"></div>
 						</el-col>
 					</el-row>
 				</header>
-				<div>
+				<div class="mainCon">
 					<el-row :gutter="20">
 						<el-col :span="8">
 							<div class="grid-content col-content">
 								<img src="./img/renewal.png" />
 								<h3 class="title2">续保查询</h3>
 								<p class="con">通过车牌号快速查询行驶本信息、去年投保险种</p>
-								<router-link tag="el-button" class="el-button--primary" to="/product#son1"> 查看详情  </router-link>
+								<router-link tag="el-button" class="el-button--primary btn2" to="/product#son1"> 查看详情  </router-link>
 							</div>
 						</el-col>
 						<el-col :span="8">
@@ -36,7 +36,7 @@
 								<img src="./img/quote.png" />
 								<h3 class="title2">自动报价</h3>
 								<p class="con">输入车牌号，10秒钟快速报价，成功率高达98%以上</p>
-								<router-link tag="el-button" class="el-button--primary" to="/product#son2"> 查看详情  </router-link>
+								<router-link tag="el-button" class="el-button--primary btn2" to="/product#son2"> 查看详情  </router-link>
 							</div>
 						</el-col>
 						<el-col :span="8">
@@ -44,7 +44,7 @@
 								<img src="./img/order.png" />
 								<h3 class="title2">订单管理</h3>
 								<p class="con">保留全流程记录，对使用者管理，查询订单方便快捷</p>
-								<router-link tag="el-button" class="el-button--primary" to="/product#son3"> 查看详情  </router-link>
+								<router-link tag="el-button" class="el-button--primary btn2" to="/product#son3"> 查看详情  </router-link>
 							</div>
 						</el-col>
 					</el-row>
@@ -54,7 +54,7 @@
 								<img src="./img/amount.png" />
 								<h3 class="title2">资金账单</h3>
 								<p class="con">自动生成与保险公司以及下级代理人的对张账单</p>
-								<router-link tag="el-button" class="el-button--primary" to="/product#son4"> 查看详情  </router-link>
+								<router-link tag="el-button" class="el-button--primary btn2" to="/product#son4"> 查看详情  </router-link>
 							</div>
 						</el-col>
 						<el-col :span="8">
@@ -62,7 +62,7 @@
 								<img src="./img/CRM.png" />
 								<h3 class="title2">车主CRM</h3>
 								<p class="con">自动生成本地车主数据库，到期自动提醒、自动报价</p>
-								<router-link tag="el-button" class="el-button--primary" to="/product#son5"> 查看详情  </router-link>
+								<router-link tag="el-button" class="el-button--primary btn2" to="/product#son5"> 查看详情  </router-link>
 							</div>
 						</el-col>
 						<el-col :span="8">
@@ -70,7 +70,7 @@
 								<img src="./img/api.png" />
 								<h3 class="title2">API接口</h3>
 								<p class="con">可以按照需求来特殊定制用户前端界面与后台管理界面</p>
-								<router-link tag="el-button" class="el-button--primary" to="/product#son6"> 查看详情  </router-link>
+								<router-link tag="el-button" class="el-button--primary btn2" to="/product#son6"> 查看详情  </router-link>
 							</div>
 						</el-col>
 					</el-row>
@@ -78,21 +78,21 @@
 			</div>
 		</section>
 		<section>
-			<div class="mainCon">
+			<div>
 				<header>
 					<el-row>
-						<el-col :span="9" class="text-center">
+						<el-col :span="8" class="text-center">
 							<div class="line"></div>
 						</el-col>
-						<el-col :span="6" class="text-center">
+						<el-col :span="8" class="text-center">
 							<h1>车险管家移动客户端功能特点介绍</h1>
 						</el-col>
-						<el-col :span="9" class="text-center">
+						<el-col :span="8" class="text-center">
 							<div class="line"></div>
 						</el-col>
 					</el-row>
 				</header>
-				<div>
+				<div class="mainCon">
 					<img src="./img/banner3.png" />
 					<ul class="con-list">
 						<li>批量导入基盘客户，初始化客户信息，进店老客户进店甄选，提升续保转化率</li>
@@ -103,21 +103,21 @@
 	</div>
 	</section>
 	<section>
-		<div class="mainCon">
+		<div>
 			<header>
 				<el-row>
-					<el-col :span="9" class="text-center">
+					<el-col :span="8" class="text-center">
 						<div class="line"></div>
 					</el-col>
-					<el-col :span="6" class="text-center">
+					<el-col :span="8" class="text-center">
 						<h1>保马良车PC功能特点介绍</h1>
 					</el-col>
-					<el-col :span="9" class="text-center">
+					<el-col :span="8" class="text-center">
 						<div class="line"></div>
 					</el-col>
 				</el-row>
 			</header>
-			<div>
+			<div class="mainCon">
 				<img src="./img/banner4.png" />
 				<ul class="con-list con-list2">
 					<li>根据车牌号获取行驶证信息成功率95%</li>
@@ -152,6 +152,17 @@
 </script>
 
 <style lang="less" scoped="scoped">
+	/*base.css开始*/
+	body,p,input,textarea,form,h1,h2,h3,h4,h5,h6,ol,dl,ul,li,dd,dt{font-weight:normal;padding:0px;padding-top:0px;padding-bottom:0px;padding-left:0px;padding-right:0px;margin:0px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;list-style:none;}
+	img{border:0;}
+	a{text-decoration:none;}
+	.fl{
+		float: left;
+	}
+	.fr{
+		float: right;
+	}
+	/*base.css结束*/
 	.el-row {
 		margin-bottom: 20px;
 		&:last-child {
@@ -167,10 +178,19 @@
 	}
 	
 	.btnBox {
-		margin-left: 30%;
-		margin-top: 30%;
+		text-align: right;
+		margin-right: 55%;
+		margin-top: 35%;
 	}
-	
+	button.btn1{
+		width: 144px;
+		height: 34px;
+	}
+	button.btn2{
+		width: 120px;
+		height: 30px;
+		line-height: 10px;
+	}
 	section {
 		width: 100%;
 		background-size: cover;
@@ -178,7 +198,24 @@
 		background-repeat: no-repeat;
 		overflow: hidden;
 	}
-	
+	header{
+		margin: 0 auto;
+	}
+	@media only screen and (min-width: 1200px){
+		header {
+			width: 1170px;
+		}
+	}
+	@media only screen and (min-width: 992px ) and (max-width: 1200px){
+		header {
+			width: 970px;
+		}
+	}
+	@media only screen and (max-width: 970px) {
+		header {
+			min-width: 875px;
+		}
+	}
 	header h1 {
 		text-align: center;
 		font-size: 26px;
@@ -208,15 +245,18 @@
 	}
 	
 	.title2 {
-		font-size: 20px;
+		font-size: 18px;
 		margin-bottom: 10px;
 		margin-top: 10px;
+		font-weight: bold;
+		color: #666;
 	}
 	
 	.con {
 		text-align: left;
 		text-indent: 28px;
 		font-size: 14px;
+		line-height: 22px;
 		color: #666666;
 		margin-bottom: 28px;
 	}

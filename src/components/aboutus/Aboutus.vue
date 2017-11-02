@@ -84,6 +84,17 @@
 </script>
 
 <style scoped="scoped">
+	/*base.css开始*/
+	body,p,input,textarea,form,h1,h2,h3,h4,h5,h6,ol,dl,ul,li,dd,dt{font-weight:normal;padding:0px;padding-top:0px;padding-bottom:0px;padding-left:0px;padding-right:0px;margin:0px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;list-style:none;}
+	img{border:0;}
+	a{text-decoration:none;}
+	.fl{
+		float: left;
+	}
+	.fr{
+		float: right;
+	}
+	/*base.css结束*/
 	.content{
 		padding-top: 72px;
 	}
