@@ -6,10 +6,10 @@
 				<ul class="text-right">
 					<router-link v-for="(item,index) in navTitle" tag="li" :to="item.name" :key="item.name" v-on:click.native='productHead(index)'>{{item.title}}</router-link>
 					<li>
-						<el-button class="btn" type="primary" size="small" @click="openDetail('http://cars.insbaby.com/login')">&nbsp;&nbsp;登 录&nbsp;&nbsp;</el-button>
+						<el-button class="btn" type="primary" size="small" @click="openDetail('https://car.insbaby.com/login')">&nbsp;&nbsp;登 录&nbsp;&nbsp;</el-button>
 					</li>
 					<li>
-						<el-button class="btn blue" size="small" @click="openDetail('http://cars.insbaby.com/register')">&nbsp;&nbsp;注 册&nbsp;&nbsp;</el-button>
+						<el-button class="btn blue" size="small" @click="openDetail('https://car.insbaby.com/register')">&nbsp;&nbsp;注 册&nbsp;&nbsp;</el-button>
 					</li>
 				</ul>
 			</nav>

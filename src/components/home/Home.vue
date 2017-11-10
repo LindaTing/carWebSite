@@ -124,6 +124,7 @@
 					<li>根据车牌号获取上年投保信息成功率85%</li>
 					<li>支持按车架号（VIN码）、发动机号续保、适合新车、过户车</li>
 				</ul>
+				<router-link tag="el-button" class="btn-more" to="/product"> 查看更多  </router-link>
 			</div>
 		</div>
 	</section>
@@ -149,6 +150,29 @@
 			}
 		}
 	}
+	
+	
+	$(function(){
+
+//	if($.browser.msie && $.browser.version < 10){
+//
+//		$('body').addClass('ltie10');
+//
+//	}
+
+//	$.fn.fullpage({
+//
+//		verticalCentered: false,
+//
+//		anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7', 'page8', 'page9', 'page10'],
+//
+//		navigation: true,
+//
+//		navigationTooltips: ['首页', '视觉', '交互', '皮肤', '功能', '待办邮件', '联系人邮件', '科技', '连接易信', '马上体验']
+//
+//	});
+
+});
 </script>
 
 <style lang="less" scoped="scoped">
@@ -280,6 +304,13 @@
 	.con-list2 {
 		width: 50%;
 		margin: 20px auto;
+	}
+	.btn-more{
+		width: 198px;
+		height: 42px;
+		color: #20A0FF;
+   		border: 1px solid #20a0ff;
+   		margin: 20px 0 48px 0;
 	}
 	/*第四部分结束*/
 </style>
