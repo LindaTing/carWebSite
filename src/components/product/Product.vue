@@ -1,107 +1,176 @@
 <template>
-	<div id="product">
-		<div class="page" :style="{backgroundImage: 'url(' + bg + ')'}"></div>
-		<nav>
-			<!---->
-			<!--<router-link v-for="(item,index) in navSonTitle" tag="li" :to="item.name" :key="item.name">{{item.title}}</router-link>-->
-			<a v-for="(item,index) in navSonTitle"  :href="'#'+item.name" :class="{active:item.activeFlag}" @click="setActive(item)">{{item.title}}</a>
-		</nav>
-		<section id="son1">
+	<div id="product" style="margin-top: 72px;">
+		<!--第一部分-->
+		<section class="section1" :style="{backgroundImage: 'url(' + bg + ')',height:setHeight+'px'}">
+			<div class="">
+				<div class="conBody">
+					<el-row class="text-center">
+						<el-col class="leftBox" :span="15" :style="{lineHeight:setHeight+'px'}">
+							<img src="./img/1-1.png" />
+						</el-col>
+						<el-col class="rightBox" :span="9">
+							<h1 class="title-lg">续保管理  智能高效</h1>
+							<h1 class="title-xs">车险报价 如此简单</h1>
+							<h1 class="title-xs">报价、出单、对账一站式服务</h1>
+							<el-button class="btn btnBig" @click="openDetail('https://car.insbaby.com/login')">&nbsp;&nbsp;立即使用&nbsp;&nbsp;</el-button>
+							<el-row class="text-center marginT10">
+								<el-col :span="10" :offset="2">
+									<img src="./img/1-2.png" />
+									<h5 class="text-label">微信公众号</h5>
+								</el-col>
+								<el-col :span="10">
+									<img src="./img/1-2.png" />
+									<h5 class="text-label">APP下载</h5>
+								</el-col>
+							</el-row>
+						</el-col>
+					</el-row>
+				</div>
+			</div>
+		</section>
+		<!--第二部分-->
+		<section class="bg-FA">
+			<div class="">
+				<header>
+					<el-row class="text-center">
+						<el-col :span="24">
+							<h1 class="title-ms">产品解决方案</h1>
+						</el-col>
+					</el-row>
+				</header>
+				<div class="conBody tab">
+					<div class="content-box">
+						<el-row class="text-center tabTitle">
+							<div class="tabCell" v-for="(item,index) in tabTitle" :class="{active:item.isActive}" @click="setActive(item)">
+								<h1 class="title">{{item.title}}</h1>
+								<h5>{{item.name}}</h5>
+							</div>
+						</el-row>
+						<ul class="text-center tabPanel">
+							<li class="tabPanelCell text-center" name="application" :class="{active:tabTitle[0].isActive}">
+								<el-row class="applicationCon">
+									<el-col :span="15">
+										<img src="./img/2-11.gif" />
+									</el-col>
+									<el-col :span="9">
+										<h1 class="">打印报价单</h1>
+									</el-col>
+								</el-row>
+							</li>
+							<li class="tabPanelCell text-center" name="use" :class="{active:tabTitle[1].isActive}">
+								<el-row class="text-center tabTitle">
+									<el-col :span="11">
+										<h1 class="title-xs">使用前</h1>
+										<img src="./img/2-22.png" />
+										<ul class="text-left textCon">
+											<li>1、使用前续保占有市场率为31.8%；</li>
+											<li>1、使用前续保占有市场率为31.8%；</li>
+											<li>1、使用前续保占有市场率为31.8%；</li>
+										</ul>
+									</el-col>
+									<el-col :span="11" :offset="2">
+										<h1 class="title-xs">使用后</h1>
+										<img src="./img/2-21.png" />
+										<ul class="text-left textCon">
+											<li>1、使用前续保占有市场率为31.8%；</li>
+											<li>1、使用前续保占有市场率为31.8%；</li>
+											<li>1、使用前续保占有市场率为31.8%；</li>
+										</ul>
+									</el-col>
+								</el-row>
+							</li>
+							<li class="tabPanelCell text-center" name="resource" :class="{active:tabTitle[2].isActive}">
+								<el-row>
+									<el-col class="resourceLeft" :span="9" :offset="2">
+										<img src="./img/2-32.png" />
+										<p class="text-left">多地市保险公司帐号<br>多保险公司车险报价<br>同一保险公司不同地区政策<br>本地区的外地车辆资源<br>车辆历史轨迹</p>
+									</el-col>
+									<el-col class="resourceRight" :span="9" :offset="1">
+										<img src="./img/2-31.png" />
+										<p class="text-right">打通帐号体系，共享车险出单<br>多保险公司同时报价<br>外地车险资源共享<br>车辆理赔、违章、年限等信息入库共享</p>
+									</el-col>
+								</el-row>
+							</li>
+							<li class="tabPanelCell text-center" name="customer" :class="{active:tabTitle[3].isActive}">
+								<el-row>
+									<el-col class="leftBox" :span="8">
+										<img src="./img/2-32.png" />
+									</el-col>
+									<el-col class="rightBox" :span="16">
+										<!--<img src="./img/2-31.png" />-->
+										<h1>logo</h1>
+										<p class="text-left">文案说明 文案说明文案说明 文案说明文案说明 文案说明文案说明 文案说明文案说明 文案说明文案说明 文案说明文案说明 文案说明文案说明 文案说明</p>
+									</el-col>
+								</el-row>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<!--第三部分-->
+		<section class="section3 bg-0C1A37" :style="{height:setHeight2+'px'}">
 			<div>
-				<el-row>
-					<el-col :span="12">
-						<img src="./img/renewal.png"/>
-					</el-col>
-					<el-col :span="12"  class="marginTop">
-						<h3>续保查询</h3>
-						<ul class="con-list">
-							<li>车辆进店，SA扫车牌快速续保查询，到期车辆第一时间通知续保顾问</li>
-							<li>APP车牌识别率近100%，有手机就能扫</li>
-						</ul>
-					</el-col>
-				</el-row>
-			</div>
-		</section>
-		<section id="son2" class="bg-gray">
-			<div>
-				<el-row>
-					<el-col :span="12"  class="marginTop">
-						<h3>自动报价</h3>
-						<ul class="con-list">
-							<li>只需一个车牌号，报价核保方便快捷</li>
-							<li>支持短信发送报价的方式</li>
-							<li>应用场景：代理人和车主报价（上图为代理人报价场景）</li>
-						</ul>
-					</el-col>
-					<el-col :span="12" class="text-right">
-						<img src="./img/quote.png"/>
-					</el-col>
-				</el-row>
-			</div>
-		</section>
-		<section id="son3">
-			<div class="paddingBottom">
-				<el-row>
-					<el-col :span="15" class="text-left" style="">
-						<img style="height: 100%;" src="./img/order.png"/>
-					</el-col>
-					<el-col :span="9"  class="marginTop">
-						<h3>订单管理	</h3>
-						<ul class="con-list">
-							<li>当车险到期后，会自动提醒业务员，紧急消息（进店通知）弹窗提醒，不紧急消息（普通到期）列表提醒</li>
-						</ul>
-					</el-col>
-				</el-row>
-			</div>
-		</section>
-		<section id="son4" class="bg-gray">
-			<div class="paddingBottom">
-				<el-row>
-					<el-col :span="12"  class="marginTop">
-						<h3>资金账单</h3>
-						<ul class="con-list">
-							<li>每张保单都要与保险公司结算佣金</li>
-							<li>录入每个直客、每个代理人的净费数据</li>
-							<li>定期与代理出单网点结算佣金</li>
-						</ul>
-					</el-col>
-					<el-col :span="12" class="text-right">
-						<img src="./img/amount.png"/>
-					</el-col>
-				</el-row>
-			</div>
-		</section>
-		<section id="son5">
-			<div class="paddingBottom">
-				<el-row>
-					<el-col :span="15">
-						<img src="./img/CRM.png"/>
-					</el-col>
-					<el-col :span="9"  class="marginTop">
-						<h3>车主CRM</h3>
-						<ul class="con-list">
-							<li>数据是核心竞争力</li>
-							<li>基于CRM探索自动营销</li>
-						</ul>
-					</el-col>
-				</el-row>
-			</div>
-		</section>
-		<section id="son6" class="bg-gray">
-			<div class="paddingBottom">
-				<el-row>
-					<el-col :span="12"  class="marginTop">
-						<h3>API接口</h3>
-						<ul class="con-list">
-							<li>通过代理商直连保险公司核心系统</li>
-							<li>我车型数据库，对接成本低</li>
-							<li>统一标注化接口，一次对接，实现多家保险公司连接</li>
-						</ul>
-					</el-col>
-					<el-col :span="12" class="text-right">
-						<img src="./img/api.png"/>
-					</el-col>
-				</el-row>
+				<header>
+					<el-row class="text-center">
+						<el-col :span="24">
+							<h1 class="title-ms">我们的优势</h1>
+						</el-col>
+					</el-row>
+				</header>
+				<div class="conBody">
+					<div class="content-box">
+						<el-row class="text-center">
+							<el-col class="cell" :span="12">
+								<div class="cellLeft">
+									<div class="circle">
+										
+									</div>
+								</div>
+								<div class="cellRight text-left">
+									<h1>傻瓜操作／FOOL OPERATION</h1>
+									<p>车牌号一键报价、续保、出单，人力配置无要求，业务员随时可操作完成</p>
+								</div>
+							</el-col>
+							<el-col class="cell" :span="12">
+								<div class="cellLeft">
+									<div class="circle">
+										
+									</div>
+								</div>
+								<div class="cellRight text-left">
+									<h1>智能管理／INTELLIGENT MANAGEMENT</h1>
+									<p>车辆信息、保单信息云端存储，最高等级加密管理，随时调阅历史数据，到期自动提醒续保，无需人脑记忆</p>
+								</div>
+							</el-col>
+						</el-row>
+						<el-row class="text-center">
+							<el-col class="cell" :span="12">
+								<div class="cellLeft">
+									<div class="circle">
+										
+									</div>
+								</div>
+								<div class="cellRight text-left">
+									<h1>资源共享／RESOURCE SHARING</h1>
+									<p>解决车险跨地区销售难题，多保险公司、多政策、跨区域交互共享，再也不用担心外地业务不能做</p>
+								</div>
+							</el-col>
+							<el-col class="cell" :span="12">
+								<div class="cellLeft">
+									<div class="circle">
+										
+									</div>
+								</div>
+								<div class="cellRight text-left">
+									<h1>强大运维／POWERFUL OPERATION</h1>
+									<p>专业技术团队强势运维管理，系统稳定流畅，问题急速响应，解决后顾之忧</p>
+								</div>
+							</el-col>
+						</el-row>
+					</div>
+				</div>
 			</div>
 		</section>
 	</div>
@@ -112,42 +181,52 @@
 		name: "product",
 		data() {
 			return {
-				navSonTitle: [{
-						name: "son1",
-						title: "续保查询",
-						activeFlag:true
-					}, {
-						name: "son2",
-						title: "自动报价",
-						activeFlag:false
-					}, {
-						name: "son3",
-						title: "订单管理",
-						activeFlag:false
-					}, {
-						name: "son4",
-						title: "资金账单",
-						activeFlag:false
+				bg: require("./img/bg.png"),
+				tabTitle: [{
+						title: "应用场景",
+						name: "APPLICATION SCENE",
+						value: "application",
+						isActive: true
 					},
 					{
-						name: "son5",
-						title: "车主CRM",
-						activeFlag:false
-					}, {
-						name: "son6",
-						title: "API接口",
-						activeFlag:false
+						title: "使用对比",
+						name: "USE CONTRAST",
+						value: "use",
+						isActive: false
+					},
+					{
+						title: "资源共享",
+						name: "RESOURCE SHARING",
+						value: "resource",
+						isActive: false
+					},
+					{
+						title: "客户案例",
+						name: "CUSTOMER CASE",
+						value: "customer",
+						isActive: false
 					}
-				],
-				bg:require("./img/banner1.png")
+				]
+
+			};
+		},
+		computed: {
+			setHeight: function() {
+				return window.innerHeight - 72;
+			},
+			setHeight2: function() {
+				return window.innerHeight - 72 - 106;
 			}
 		},
-		methods:{
-			setActive(item){
-				this.navSonTitle.forEach(function(index){
-					index.activeFlag = false;
+		methods: {
+			openDetail(url) {
+				location.href = url;
+			},
+			setActive(item) {
+				this.tabTitle.forEach(function(index) {
+					index.isActive = false;
 				})
-				item.activeFlag = true;
+				item.isActive = true;
 			}
 		}
 	}
@@ -155,74 +234,301 @@
 
 <style lang="less" scoped="scoped">
 	/*base.css开始*/
-	body,p,input,textarea,form,h1,h2,h3,h4,h5,h6,ol,dl,ul,li,dd,dt{font-weight:normal;padding:0px;padding-top:0px;padding-bottom:0px;padding-left:0px;padding-right:0px;margin:0px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;list-style:none;}
-	img{border:0;}
-	a{text-decoration:none;}
-	.fl{
+	
+	* {
+		font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+	}
+	
+	body,
+	p,
+	input,
+	textarea,
+	form,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	ol,
+	dl,
+	ul,
+	li,
+	dd,
+	dt {
+		font-weight: normal;
+		padding: 0px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
+		margin: 0px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-left: 0px;
+		margin-right: 0px;
+		list-style: none;
+	}
+	
+	img {
+		border: 0;
+	}
+	
+	a {
+		text-decoration: none;
+	}
+	
+	.fl {
 		float: left;
 	}
-	.fr{
+	
+	.fr {
 		float: right;
 	}
-	/*base.css结束*/
-	.text-center{
+	
+	.text-center {
 		text-align: center;
 	}
-	.text-right{
+	
+	.text-left {
+		text-align: left;
+	}
+	.text-right {
 		text-align: right;
 	}
-	.page {
+	
+	.bg-FA {
+		background-color: #FAFAFA;
+	}
+	
+	.bg-0C1A37 {
+		background-color: #0C1A37;
+	}
+	
+	.marginT10 {
+		margin-top: 20%;
+	}
+	/*base.css结束*/
+	
+	section {
 		width: 100%;
-		height: 370px;
-		/*background-image: url(img/banner1.png);*/
+		background-size: cover;
 		background-position: center;
+		background-repeat: no-repeat;
+		/*overflow: hidden;*/
 	}
-	.bg-gray{
-		background-color: #F2F2F2;
+	/*第一部分开始*/
+	
+	.section1 {
+		color: #FFFFFF;
+		padding: 0 8%;
+		box-sizing: border-box;
 	}
-	nav {
+	
+	.section1 .leftBox img {
+		width: 95%;
+		vertical-align: middle;
+	}
+	
+	.section1 .rightBox {
+		margin-top: 10%;
+	}
+	
+	.title-lg {
+		font-size: 52px;
+		margin-bottom: 8%;
+	}
+	
+	.title-xs {
+		font-size: 24px;
+		margin-bottom: 2%;
+	}
+	
+	.title-ms {
+		font-size: 32px;
+		margin-top: 3%;
+		margin-bottom: 3%;
+	}
+	
+	.btn.btnBig {
+		width: 148px;
+		height: 42px;
+		margin-top: 10%;
+	}
+	
+	.text-label {
+		margin-top: 20px;
+		font-size: 18px;
+	}
+	/*第一部分结束*/
+	/*第二部分开始*/
+	
+	.tab {
+		background-color: #FFFFFF;
+		padding: 30px;
+	}
+	
+	.tab .tabTitle {
+		cursor: pointer;
+	}
+	
+	.tab .tabCell {
+		width: 25%;
+		float: left;
+		color: #666666;
+	}
+	
+	.tab .tabCell:hover {
+		color: #404040;
+	}
+	
+	.tab .tabCell.active {
+		color: #404040;
+		border-bottom: 2px solid #3295fa;
+	}
+	
+	.tab .tabCell h1 {
+		font-size: 24px;
+		margin-bottom: 16px;
+	}
+	
+	.tab .tabCell h5 {
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+	
+	.tabPanel .tabPanelCell.active {
+		display: block;
+	}
+	
+	.tabPanelCell {
+		display: none;
+		padding-top: 55px;
+	}
+	
+	.tabPanelCell .title-xs {
+		margin-bottom: 24px;
+	}
+	
+	.tabPanelCell[name=application]>div {
+		padding: 20px;
 		width: 100%;
-		background-color: #F2F2F2;
-		height: 60px;
-		line-height: 60px;
-		text-align: center;
-		a {
-			display: inline-block;
-			padding: 0 30px;
-			cursor: pointer;
-			color: #333;
-			font-size: 16px;
+		border-radius: 5px;
+		background-color: #161B26;
+		color: #FFFFFF;
+	}
+	
+	.tabPanelCell[name=application]>div img {
+		width: 100%;
+	}
+	.tabPanelCell[name=use]{
+		padding-bottom: 5.3%;
+	}
+	
+	.tabPanelCell[name=use] img {
+		width: 100%;
+	}
+	
+	.tabPanelCell[name=use] .textCon {
+		font-size: 18px;
+		line-height: 44px;
+		margin-top: 20px;
+	}
+	.tabPanelCell[name=resource] {
+		padding-bottom: 5.3%;
+	}
+	.tabPanelCell[name=resource] img {
+		width: 100%;
+	}
+	.tabPanelCell[name=resource] .resourceLeft,.tabPanelCell[name=resource] .resourceRight{
+		position: relative;
+	}
+	.tabPanelCell[name=resource] .resourceLeft p,.tabPanelCell[name=resource] .resourceRight p{
+		padding: 5px 38px;
+		position: absolute;
+		bottom: 15%;
+		font-size: 24px;
+		line-height: 44px;
+	}
+	.tabPanelCell[name=customer]{
+		padding-bottom: 5.3%;
+	}
+	.tabPanelCell[name=customer]>div {
+		border: solid 1px #bfbfbf;
+	}
+	.tabPanelCell[name=customer] .leftBox img{
+		width: 100%;
+	}
+	.tabPanelCell[name=customer] .rightBox{
+		padding: 20px 40px;
+	}
+	.tabPanelCell[name=customer] .rightBox p{
+		font-size: 24px;
+		line-height: 44px;
+		color: #404040;
+	}
+	/*第二部分结束*/
+	/*第三部分开始*/
+	.section3{
+		color: #FFFFFF;
+	}
+	.section3 .cell{ 
+		display: -moz-box;
+		display: -webkit-box;
+		display: -ms-box;
+		display: -o-box;
+		display: box;
+		padding-top:50px ;
+		/*height: 270px;*/
+	}
+	.section3 .cell .cellLeft{
+		width: 128px;
+	}
+	.section3 .cell .cellLeft .circle{
+		width: 128px;
+		height: 128px;
+		border-radius: 50%;
+		background-color: rgba(255, 255, 255, 0.5);
+	}
+	.section3 .cell .cellRight{
+		padding-left: 30px;
+		padding-right:200px;
+		-moz-box-align: center;
+		-webkit-box-align: center;
+	}
+	.section3 .cell .cellRight h1{
+		font-size: 24px;
+		margin-bottom: 10px;
+	}
+	.section3 .cell .cellRight p{
+		font-size: 18px;
+		line-height: 44px;
+	}
+	/*第三部分结束*/
+	/*第四部分开始*/
+	/*第四部分结束*/
+	/*响应式窗口大小*/
+	
+	.content-box {
+		margin: 0 auto;
+	}
+	
+	@media only screen and (min-width: 1200px) {
+		.content-box {
+			width: 1170px;
 		}
 	}
 	
-	.active {
-		font-weight: bold;
-		border-bottom: 2px solid #3DAEFE;
+	@media only screen and (min-width: 992px) and (max-width: 1200px) {
+		.content-box {
+			width: 970px;
+		}
 	}
 	
-	.con-list{
-		margin-top: 10px;
-	}
-	.con-list li{
-		list-style: disc;
-		text-align: left;
-		font-size: 18px;
-		color: #666666;
-		line-height: 28px;
-	}
-	section>div{
-		width: 780px;
-		margin: 0 auto;
-		padding-top: 70px;
-	}
-	section h3{
-		font-size: 30px;
-		color: #333333;
-	}
-	.marginTop{
-		margin-top: 8%;
-	}
-	.paddingBottom{
-		padding-bottom: 70px;
+	@media only screen and (max-width: 970px) {
+		.content-box {
+			min-width: 875px;
+			margin: 0 20px;
+		}
 	}
 </style>

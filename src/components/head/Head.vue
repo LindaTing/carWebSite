@@ -1,18 +1,25 @@
 <template>
-	<div id="header" class="head-content head1" :class="{'head1':flag,'head2':flag}">
+	<div id="header" class="head-content">
 		<div class="content-box">
-			<img :src="imgSrc" />
-			<nav class="fr">
-				<ul class="text-right">
-					<router-link v-for="(item,index) in navTitle" tag="li" :to="item.name" :key="item.name" v-on:click.native='productHead(index)'>{{item.title}}</router-link>
-					<li>
-						<el-button class="btn" type="primary" size="small" @click="openDetail('https://car.insbaby.com/login')">&nbsp;&nbsp;登 录&nbsp;&nbsp;</el-button>
-					</li>
-					<li>
-						<el-button class="btn blue" size="small" @click="openDetail('https://car.insbaby.com/register')">&nbsp;&nbsp;注 册&nbsp;&nbsp;</el-button>
-					</li>
-				</ul>
-			</nav>
+			<el-row>
+				<el-col :span="4">
+					<img :src="imgSrc" />
+				</el-col>
+				<el-col :span="20" class="text-right">
+					<nav class="text-right fr">
+						<ul class="text-right">
+							<router-link v-for="(item,index) in navTitle" tag="li" :to="item.name" :key="item.name">{{item.title}}</router-link>
+							<li>
+								<el-button class="btn" size="small" @click="openDetail('https://car.insbaby.com/login')">&nbsp;&nbsp;登 录&nbsp;&nbsp;</el-button>
+							</li>
+							<li>
+								<el-button class="btn plain" size="small" @click="openDetail('https://car.insbaby.com/register')">&nbsp;&nbsp;注 册&nbsp;&nbsp;</el-button>
+							</li>
+						</ul>
+					</nav>
+				</el-col>
+			</el-row>
+
 		</div>
 	</div>
 </template>
@@ -25,10 +32,13 @@
 				/*导航路径和名称*/
 				navTitle: [{
 					name: "home",
-					title: "主页"
+					title: "首页"
 				}, {
 					name: "product",
-					title: "产品介绍"
+					title: "产品与方案"
+				}, {
+					name: "function",
+					title: "功能介绍"
 				}, {
 					name: "partners",
 					title: "合作加盟"
@@ -36,30 +46,15 @@
 					name: "aboutus",
 					title: "关于我们"
 				}],
-				flag:true,/*是否是产品介绍路由，是：true，否：false*/
-				imgSrc:""
+				imgSrc: ""
 			}
 		},
-		created(){
-			this.flag = this.flagDefault();
-			this.imgSrc = this.flag?require('./img/logo2.png'):require('./img/logo.png');
+		created() {
+			this.imgSrc = require('./img/logo2.png');
 		},
-		methods:{
-			/*判断路由是产品时,设置falg=true*/
-			productHead(index){
-				if(index == 1){
-					this.flag = true;
-				}else{
-					this.flag = false;
-				}
-				this.imgSrc = this.flag ?require('./img/logo2.png'):require('./img/logo.png');
-			},
-			/*是否是产品介绍路由，是：true，否：false*/
-			flagDefault(){
-				return (this.$route.path == "/product" ? true : false);
-			},
+		methods: {
 			/*跳转页面*/
-			openDetail(url){
+			openDetail(url) {
 				location.href = url;
 			}
 		}
@@ -68,37 +63,73 @@
 
 <style lang="less" scoped>
 	/*base.css开始*/
-	body,p,input,textarea,form,h1,h2,h3,h4,h5,h6,ol,dl,ul,li,dd,dt{font-weight:normal;padding:0px;padding-top:0px;padding-bottom:0px;padding-left:0px;padding-right:0px;margin:0px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;list-style:none;}
-	img{border:0;}
-	a{text-decoration:none;}
-	.fl{
+	*{
+		font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+	}
+	body,
+	p,
+	input,
+	textarea,
+	form,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	ol,
+	dl,
+	ul,
+	li,
+	dd,
+	dt {
+		font-weight: normal;
+		padding: 0px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
+		margin: 0px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-left: 0px;
+		margin-right: 0px;
+		list-style: none;
+	}
+	
+	img {
+		border: 0;
+	}
+	
+	a {
+		text-decoration: none;
+	}
+	
+	.fl {
 		float: left;
 	}
-	.fr{
+	
+	.fr {
 		float: right;
 	}
 	/*base.css结束*/
-	#header{
+	
+	#header {
 		position: fixed;
 		top: 0;
 		z-index: 1000000;
 	}
-	@color: #00AEFF;
-	.text-right{
+	
+	@color: #f4fdff;
+	.text-right {
 		text-align: right;
 	}
-	.head1{
-		background-color: #fff;
-		border-bottom: 1px solid #E6E6E6;
-	}
-	.head2{
-		position: absolute;
-		background-color: rgba(0,0,0,0.3);
-		color: #FFFFFF;
-		border-bottom: 0;
-	}
+	
 	.head-content {
 		width: 100%;
+		background-color: #0c1a37;
+		border-bottom: 1px solid #525F73;
+		color: @color;
 	}
 	
 	img {
@@ -109,12 +140,6 @@
 		height: 72px;
 		line-height: 72px;
 		margin: 0 auto;
-		box-sizing: content-box;
-	}
-	
-	nav {
-		width: 70%;
-		height: 100%;
 	}
 	
 	li {
@@ -128,31 +153,38 @@
 		font-weight: bold;
 		color: @color;
 	}
-	.btn{
+	
+	.btn {
 		width: 88px;
 	}
-	.btn.blue{
-		color: #20A0FF;
-		border: 1px solid #20a0ff;
+	
+	.btn.plain {
+		background: transparent;
+		border: 1px solid @color;
+		color: @color;
 	}
-	@media only screen and (min-width: 1200px){
+	/*响应式窗口大小*/
+	
+	@media only screen and (min-width: 1200px) {
 		.content-box {
 			width: 1170px;
 		}
 	}
-	@media only screen and (min-width: 992px ) and (max-width: 1200px){
+	
+	@media only screen and (min-width: 992px) and (max-width: 1200px) {
 		.content-box {
 			width: 970px;
 		}
 	}
+	
 	@media only screen and (max-width: 970px) {
 		.content-box {
 			/*width: 970px;*/
 			min-width: 875px;
 			margin: 0 20px;
 		}
-		.btn{
-			width:auto;
+		.btn {
+			width: auto;
 		}
 	}
 </style>

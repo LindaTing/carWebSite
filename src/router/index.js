@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Home from './../components/home/Home'
 import Product from './../components/product/Product'
 import Partners from './../components/partners/Partners'
+import Function from './../components/function/Function'
+import Productmore from './../components/productmore/Productmore'
 import Aboutus from './../components/aboutus/Aboutus'
 
 Vue.use(Router)
@@ -30,6 +32,16 @@ export default new Router({
 			path: '/product',
 			name: 'product',
 			component: Product
+		},
+		{
+			path: '/function',
+			name: 'function',
+			component: Function
+		},
+		{
+			path: '/productmore',
+			name: 'productmore',
+			component: Productmore
 		},
 		{
 			path: '/partners',

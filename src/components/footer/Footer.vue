@@ -31,7 +31,8 @@
 		height: 106px;
 		line-height: 106px;
 		font-size: 12px;
-		background-color: #1C262E;
+		background-color: #0C1A37;
+		border-top: 1px solid #3D485F;
 	}
 	
 	.content-box {
